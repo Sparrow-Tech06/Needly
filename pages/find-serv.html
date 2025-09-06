@@ -29,6 +29,59 @@
     .category-link {
       text-decoration: none;
     }
+   /******************************************/
+    /* Background illustration section */
+    .search-section {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    .search-section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Search box on top of image */
+    .search-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 500px;
+    }
+    .search-box input {
+      border-radius: 50px;
+      padding: 14px 45px;
+      font-size: 16px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+    .search-box i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: #666;
+    }
+   .custom-search:focus {
+  border: 2px solid #28a745 !important;      /* green border */
+  box-shadow: none !important;           /* remove blue glow / shadow */
+  outline: none !important;              /* remove default outline */
+}
+
+/* optionally make the transition smooth */
+.custom-search {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* 2) No colored focus — keep it visually normal on focus */
+.no-focus-glow:focus {
+  border-color: #dee2e6 !important;      /* same as normal bootstrap border (gray) */
+  box-shadow: none !important;
+  outline: none !important;
+}
+   /*****************************************/
     .category-card {
       background: #fff;
       border-radius: 14px;
@@ -84,10 +137,18 @@
 
 <div class="container py-4">
   <h5 class="mb-3 text-center fw-semibold">Explore All Services</h5>
-
-  <!-- 🔍 Search Input -->
-  <input type="text" id="serviceSearch" class="form-control shadow-sm px-3 py-2 search-input" placeholder="Search for a service...">
-
+ 
+ <!-- Search Section -->
+ <section class="search-section">
+    <!-- Background Illustration (Picsum) -->
+    <img src="https://picsum.photos/1200/300" alt="background illustration">
+    <!-- 🔍 Search Input -->
+    <div class="search-box">
+        <i class="bi bi-search"></i>
+        <input type="text" id="serviceSearch" class="form-control shadow-sm px-3 py-2 custom-search search-input" placeholder="Search for a service...">
+   </div>
+  </section>
+ 
   <div class="row g-3 justify-content-start mt-2" id="categoryContainer">
 
     <!-- Example Category Cards -->
@@ -244,3 +305,4 @@
 
 </body>
 </html
+
