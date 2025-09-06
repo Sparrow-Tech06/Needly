@@ -1,0 +1,419 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no,viewport-fit=cover">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <title> Needly - find your need </title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <meta name="google" content="notranslate">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      font-family: "Open Sans", sans-serif;
+      font-optical-sizing: auto;
+    }
+    body {
+      background: white;
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 660px; 
+      margin: 0 auto;
+      font-family: "Open Sans", sans-serif;
+      font-optical-sizing: auto;
+    }
+    a {
+      text-decoration: none;
+      underline: none;
+      color: #008080;
+    }
+    a:hover {
+      text-decoration: none;
+      underline: none;
+      color: #008080;
+    }
+   /*****************************************/    
+  .bottom-nav {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #008080;
+      width: 95%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 35px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      padding:10px 3px;
+    }
+
+    .nav-icon {
+      color: #ffffffcc;
+      font-size: 22px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .nav-icon span {
+      display: block;
+      font-size: 10px;
+    }
+
+    .nav-icon:hover {
+      color: #fff;
+    }
+
+    .nav-icon.active {
+      background-color: #fff;
+      color: #008080 !important;
+      padding: 8px 12px;
+      border-radius: 50%;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+      font-size: 24px;
+    }
+  /******************************************************/
+    .header-wrapper {
+      background: #008080;
+      color: white;
+      padding: 1.2rem 1rem 0.8rem;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-top a { 
+      color: #fff;
+      background: rgba(255,255,255,0.3);
+      padding: 0px 6px;
+      border-radius:6px;
+     }
+
+    .header-left { 
+      display: flex; 
+      flex-direction: column; 
+      align-items: flex-start; 
+    }
+  /*******************************************************/  
+    .search-wrapper {
+      position: relative;
+      margin-top: 1rem;
+    }
+    .search-bar {
+      background: white;
+      border-radius: 10px;
+      padding: 0.4rem 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .search-bar input {
+      border: none;
+      outline: none;
+      flex-grow: 1;
+      font-size: 14px;
+    }
+  /***********************************************************/  
+    .dropdown-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border-radius: 0 0 10px 10px;
+      max-height: 220px;
+      overflow-y: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 2;
+      border: 1px solid #ccc;
+    }
+    .dropdown-list.active {
+      display: block;
+    }
+    .dropdown-search {
+      padding: 8px 10px;
+      background: #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+    .dropdown-search input {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .dropdown-option {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 1px solid #f1f1f1;
+      transition: background 0.2s;
+      color: #008080 ;
+    }
+    .dropdown-option:hover {
+      background: #e6f3f3;
+    }
+    .no-result {
+      padding: 12px;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      background:red;
+    }
+  /*******************************************************/
+    .section-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .category-icon {
+      width: 50px;
+      height: 50px;
+      background: #e0f7f7;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      margin: auto;
+    }
+    .carousel-indicators {
+      position: static;
+      margin-top: 0.5rem;
+      justify-content: center;
+    }
+    .carousel-indicators [data-bs-target] {
+      background-color: #008080;
+    }
+    
+  </style>
+</head>
+<body oncontextmenu= "return false">
+
+  <!-----------------------------------------------------
+  ------------------------- Header ----------------------
+  ------------------------------------------------------->
+  <div class="header-wrapper">
+    <div class="header-top">
+      <div class="header-left">
+        <h5 class="mb-0">Needly</h5>
+        <span>find your need anytime anywhere</span>
+      </div>
+      <a href="pages/notifications.php" class="bi bi-bell-fill fs-4"> </a>
+    </div>
+
+    <!----------------------------------------------------
+     ---------------------- Search Bar --------------------
+     ------------------------------------------------------>
+    <div class="search-wrapper">
+      <div class="search-bar shadow-sm" onclick="toggleDropdown(event)">
+        <i class="bi bi-search text-muted"></i>
+        <input type="search" id="searchInput" placeholder="Select a service..." readonly class="form-control border-0 shadow-none">
+        <button class="btn btn-sm btn-success px-3" id="goBtn" disabled onclick="goToService()">Go</button>
+      </div>
+
+      <!-------------------------------------------------------
+      ------------------------ Dropdown -----------------------
+      --------------------------------------------------------->
+      <div class="dropdown-list" id="dropdownList">
+        <div class="dropdown-search">
+          <input type="search" id="filterInput" placeholder="Search service..." oninput="filterOptions()">
+        </div>
+        <div id="optionContainer"></div>
+        <div class="no-result d-none" id="noResult">Service not found</div>
+      </div>
+    </div>
+  </div>
+
+  <!------------------------------------------------------------
+  --------------------------- Bottom Navigation ----------------
+  -------------------------------------------------------------->
+  <div class="bottom-nav">
+    <a href="javascript:window.location.reload()" class="nav-icon active"><i class="bi bi-house-fill"></i></a>
+    <a href="pages/find-services.php" class="nav-icon"><i class="bi bi-search"></i></a>
+    <a href="pages/settings.php" class="nav-icon"><i class="bi bi-gear-fill"></i></a>
+    <a href="pages/notifications.php" class="nav-icon"><i class="bi bi-bell"></i></a>
+    <a href="pages/rewards.php" class="nav-icon"><i class="bi bi-gift-fill"></i></a>
+  </div>
+
+
+  <div class="container mt-3">
+     <!-------------------------------------------------
+     ------------- Special Offers Carousel -------------
+     --------------------------------------------------->
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="section-title">Special Offers</div>
+           <a href="pages/notifications.php">See All</a>
+       </div>
+    <div id="offerCarousel" class="carousel slide mt-2" data-bs-ride="carousel">
+      <div class="carousel-inner rounded-3">
+         <div class="carousel-item active">
+           <img src="https://picsum.photos/360/140?1" class="d-block w-100 rounded-3" alt="offer1">
+        </div>
+         <div class="carousel-item">
+           <img src="https://picsum.photos/360/140?2" class="d-block w-100 rounded-3" alt="offer2">
+        </div>
+         <div class="carousel-item">
+           <img src="https://picsum.photos/360/140?3" class="d-block w-100 rounded-3" alt="offer3">
+        </div>
+      </div>
+      <div class="carousel-indicators">
+         <button type="button" data-bs-target="#offerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+         <button type="button" data-bs-target="#offerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+         <button type="button" data-bs-target="#offerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+     </div>
+   </div>
+
+<!-------------------------------------------------
+-------------------- Category ---------------------
+--------------------------------------------------->
+<div class="d-flex justify-content-between align-items-center mt-4">
+     <div class="section-title">Category</div>
+       <a href="pages/find-services.php">See All</a>
+    </div>
+<div class="d-flex justify-content-between text-center mt-3">
+  <div>
+    <div class="category-icon"><i class="bi bi-bug-fill"></i></div>
+    <small>Dog</small>
+  </div>
+  <div>
+    <div class="category-icon"><i class="bi bi-emoji-smile"></i></div>
+    <small>Cat</small>
+  </div>
+  <div>
+    <div class="category-icon"><i class="bi bi-twitter"></i></div>
+    <small>Birds</small>
+  </div>
+  <div>
+    <div class="category-icon"><i class="bi bi-droplet-fill"></i></div>
+    <small>Fish</small>
+  </div>
+</div>
+
+<!-----------------------------------------------------
+--------------------- Best Seller Product -------------
+------------------------------------------------------->
+<div class="d-flex justify-content-between align-items-center mt-4">
+  <div class="section-title">Best Seller Product</div>
+  <a href="pages/providers.php">See All</a>
+</div>
+<div class="row mt-2 g-2">
+  <div class="col-6">
+    <div class="card shadow-sm">
+      <img src="https://picsum.photos/200/200?dog" class="card-img-top" alt="Dog Food">
+      <div class="card-body p-2">
+        <p class="card-text mb-1" style="font-size: 14px;">Dog Food Pack</p>
+        <small class="text-muted">⭐⭐⭐⭐☆</small>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card shadow-sm">
+      <img src="https://picsum.photos/200/200?cat" class="card-img-top" alt="Cat Toy">
+      <div class="card-body p-2">
+        <p class="card-text mb-1" style="font-size: 14px;">Cat Toy</p>
+        <small class="text-muted">⭐⭐⭐⭐⭐</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> 
+
+
+  <script>
+    const dropdown = document.getElementById('dropdownList');
+    const searchInput = document.getElementById('searchInput');
+    const goBtn = document.getElementById('goBtn');
+    const filterInput = document.getElementById('filterInput');
+    const optionContainer = document.getElementById('optionContainer');
+    const noResult = document.getElementById('noResult');
+    let servicesData = [];
+    let selectedPage = "";
+
+    // Fetch services from JSON file
+    fetch("services.json")
+      .then(res => res.json())
+      .then(data => {
+        servicesData = data;
+        renderOptions(data);
+      });
+
+    function renderOptions(data) {
+      optionContainer.innerHTML = "";
+      data.forEach(service => {
+        const div = document.createElement("div");
+        div.className = "dropdown-option";
+        div.textContent = service.service_name;
+        div.onclick = () => selectOption(service.service_name, service.redirect_page);
+        optionContainer.appendChild(div);
+      });
+    }
+
+    function toggleDropdown(e) {
+      if (e.target.tagName !== "BUTTON") {
+        dropdown.classList.toggle('active');
+        setTimeout(() => filterInput.focus(), 150);
+      }
+    }
+
+    function selectOption(value, page) {
+      searchInput.value = value;
+      selectedPage = page;
+      goBtn.disabled = false;
+      dropdown.classList.remove("active");
+    }
+
+    function filterOptions() {
+      const filter = filterInput.value.toLowerCase();
+      const filtered = servicesData.filter(s => s.service_name.toLowerCase().includes(filter));
+      renderOptions(filtered);
+      noResult.classList.toggle("d-none", filtered.length !== 0);
+    }
+
+    function goToService() {
+      if (!selectedPage) {
+        alert("Please select a valid service.");
+        return;
+      }
+      window.location.href = selectedPage;
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function(event) {
+      if (!event.target.closest(".search-wrapper")) {
+        dropdown.classList.remove("active");
+      }
+    });
+
+    // Redirect on Enter key
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" && !dropdown.classList.contains("active") && selectedPage) {
+        goToService();
+      }
+    });
+  </script>
+</body>
+</html>
