@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <style>
+    :root {
+      --primary-bg: linear-gradient(135deg, #00695c, #00897b);
+      --card-radius: 18px;
+      --text-dark: #2c3e50;
+      --text-light: #6c757d;
+      --transition-speed: 0.6s;
+    }
+
+    body {
+      background: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Page fade animation */
+    .page-enter {
+      animation: fadeIn var(--transition-speed) ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Header */
+    .header {
+      background: var(--primary-bg);
+      color: white;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      padding: 1rem 1rem 1rem 1rem;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .back-btn {
+      background: white;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 20px;
+      color: #007BFF;
+      border: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    
+    .header h4 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin: 1rem auto 0 auto;
+      display: block;
+    }
+
+    /* Settings Card */
+    .settings-card {
+      background: white;
+      border-radius: var(--card-radius);
+      margin: -0px 0px 20px 0px;
+      padding: 1rem;
+    }
+
+    .list-group-item {
+      border: none;
+      padding: 1rem 0.75rem;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: 0.2s;
+    }
+    .list-group-item:hover {
+      background: #f1f9ff;
+      transform: translateX(4px);
+      border-radius:8px;
+    }
+
+    .item-left {
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      text-decoration: none;
+      width: 100%;
+    }
+    .item-left i {
+      font-size: 20px;
+      margin-right: 12px;
+      color: var(--text-light);
+    }
+    .item-right { color: var(--text-light); }
+
+  </style>
+</head>
+<body class="page-enter">
+
+  <!-- Header -->
+  <div class="header sticky-top">
+    <div class="header-top">
+      <button class="back-btn"><i class="bi bi-arrow-left"></i></button>
+      <h4>Settings</h4>
+    </div>
+    <img src="https://picsum.photos/200" alt="avatar" class="avatar">
+  </div>
+
+  <!-- Settings Card -->
+  <div class="settings-card">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <a href="#" class="item-left"> <i class="bi bi-info-circle"></i> About Us </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <li class="list-group-item">
+        <a href="#" class="item-left">
+          <i class="bi bi-shield-lock"></i> Privacy Policy
+        </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <li class="list-group-item">
+        <a href="#" class="item-left">
+          <i class="bi bi-bell"></i> Notifications
+        </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <li class="list-group-item">
+        <a href="#" class="item-left">
+          <i class="bi bi-person-plus"></i> Invite Friends
+        </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <!-- Developer Details -->
+      <li class="list-group-item">
+        <a href="#" class="item-left">
+          <i class="bi bi-code-slash"></i> Developer Details
+        </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <!-- Contact Us -->
+      <li class="list-group-item">
+        <a href="#" class="item-left">
+          <i class="bi bi-envelope"></i> Contact Us
+        </a>
+        <span class="item-right"><i class="bi bi-chevron-right"></i></span>
+      </li>
+      <!-- Non-clickable App Version -->
+      <li class="list-group-item">
+        <div class="item-left">
+          <i class="bi bi-phone"></i> App Version
+        </div>
+        <span class="item-right text-muted">1.0.0</span>
+      </li>
+    </ul>
+  </div>
+
+</body>
+</html>
