@@ -1,0 +1,9 @@
+ [
+  { "service_name": "Electrician", "redirect_page": "electrician.php" },
+  { "service_name": "Plumber", "redirect_page": "plumber.php" },
+  { "service_name": "AC Repair", "redirect_page": "electrician.php" },
+  { "service_name": "Dog", "redirect_page": "dog.php" },
+  { "service_name": "Cat", "redirect_page": "cat.php" },
+  { "service_name": "Bird", "redirect_page": "bird.php" },
+  { "service_name": "Fish", "redirect_page": "fish.php" }
+]
