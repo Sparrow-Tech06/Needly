@@ -48,23 +48,28 @@
     }
    /*****************************************/    
   .bottom-nav {
-      position: fixed;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #008080;
-      width: 95%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 35px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-      padding:10px 3px;
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #008080;
+        width: 95%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 35px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        padding: 10px 3px;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  /* hide animation */
+    .bottom-nav.hide {
+        transform: translate(-50%, 100px);
+        opacity: 0;
     }
-
     .nav-icon {
       color: #ffffffcc;
       font-size: 22px;
@@ -415,6 +420,26 @@
       if (event.key === "Enter" && !dropdown.classList.contains("active") && selectedPage) {
         goToService();
       }
+    });
+  </script>
+
+
+  <script>
+    let lastScroll = 0;
+    const nav = document.querySelector(".bottom-nav");
+
+    window.addEventListener("scroll", () => {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScroll) {
+        // Scroll down -> hide nav
+        nav.classList.add("hide");
+      } else {
+        // Scroll up -> show nav
+        nav.classList.remove("hide");
+      }
+
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll; // prevent negative
     });
   </script>
 
