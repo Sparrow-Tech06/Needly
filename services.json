@@ -1,5 +1,5 @@
  [
-  { "service_name": "Electrician", "redirect_page": "services/electrician/index.html" },
+  { "service_name": "Electrician", "redirect_page": "services/electrical.html" },
   { "service_name": "Plumber", "redirect_page": "services/plumbing/index.html" },
   { "service_name": "AC Repair", "redirect_page": "services/painting/index.html" },
   { "service_name": "Dog", "redirect_page": "services/painting/index.html" },
@@ -7,3 +7,4 @@
   { "service_name": "Bird", "redirect_page": "services/painting/index.html" },
   { "service_name": "Fish", "redirect_page": "services/painting/index.html" }
 ]
+
