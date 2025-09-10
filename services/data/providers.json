@@ -2,7 +2,7 @@
   {
     "id": "P001",
     "name": "Rahul Services",
-    "img": "../images/rahul.jpg",
+    "img": "images/rahul.jpg",
     "services": ["electrical", "painting", "cleaning"],
     "phone": "9876543210",
     "whatsapp": "9876543210",
@@ -11,7 +11,7 @@
   {
     "id": "P002",
     "name": "Suman Painter",
-    "img": "../images/suman.jpg",
+    "img": "images/suman.jpg",
     "services": ["painting"],
     "phone": "9123456780",
     "whatsapp": "9123456780",
@@ -20,7 +20,7 @@
   {
     "id": "P003",
     "name": "Amit Plumber",
-    "img": "../images/amit.jpg",
+    "img": "images/amit.jpg",
     "services": ["plumbing", "gardening"],
     "phone": "9000000000",
     "whatsapp": "9000000000",
