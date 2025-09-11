@@ -3,7 +3,7 @@
     "id": "P001",
     "name": "Rahul Services",
     "img": "images/rahul.jpg",
-    "services": ["electrical", "painting", "cleaning"],
+    "services": ["electrical", "painting", "Ac repair", "Tv machanic", " Fridge", "car wash", "cleaning"],
     "phone": "9876543210",
     "whatsapp": "9876543210",
     "googleMap": "https://maps.google.com/?q=23.456,87.123"
