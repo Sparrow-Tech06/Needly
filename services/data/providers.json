@@ -2,7 +2,7 @@
   {
     "id": "P001",
     "name": "Rahul Services",
-    "img": "images/rahul.jpg",
+    "img": "https://picsum.photos/200/200?dog",
     "services": ["electrical", "painting", "Ac repair", "Tv machanic", " Fridge", "car wash", "cleaning"],
     "phone": "9876543210",
     "whatsapp": "9876543210",
