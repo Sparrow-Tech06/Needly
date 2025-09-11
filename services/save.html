@@ -65,7 +65,7 @@
       list.innerHTML = "";
 
       if (saved.length === 0) {
-        list.innerHTML = `<p class="text-center text-muted">No providers saved yet.</p>`;
+        list.innerHTML = `<div class="not-yet"> <i class="bi bi-bookmark"></i> <p class="text-center"> No providers saved yet.</p></div>`;
         return;
       }
 
