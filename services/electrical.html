@@ -17,7 +17,7 @@
   
   <style>
     body { background: #f8f9fa; }
-    .provider-card { transition: transform 0.3s; }
+    .provider-card { transition: transform 0.3s; z-index:1; }
     .provider-card:hover { transform: scale(1.03); }
     .provider-img { height: 180px; object-fit: cover; }
 
@@ -30,6 +30,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky ;
             top: 0 ;
+            z-index: 99 ;
           }
           .header-title {
             margin: 0 auto;
