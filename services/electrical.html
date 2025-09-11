@@ -15,6 +15,9 @@
   <div class="container py-4">
     <h2 class="mb-4 text-center">Electrical Service Providers</h2>
     <div id="providerList" class="row g-4"></div>
+    <div class="text-center mt-4">
+      <a href="save.html" class="btn btn-success">Go to Saved Providers</a>
+    </div>
   </div>
 
   <script>
@@ -22,7 +25,7 @@
 
     async function loadProviders() {
       try {
-        const res = await fetch("data/providers.json"); // path fixed
+        const res = await fetch("data/providers.json");
         const providers = await res.json();
 
         const list = document.getElementById("providerList");
@@ -48,13 +51,32 @@
                 <p class="card-text"><strong>Phone:</strong> <a href="tel:${p.phone}">${p.phone}</a></p>
                 <p class="card-text"><strong>WhatsApp:</strong> <a href="https://wa.me/${p.whatsapp}" target="_blank">${p.whatsapp}</a></p>
                 <a href="${p.googleMap}" target="_blank" class="btn btn-sm btn-primary">View on Map</a>
+                <button class="btn btn-sm btn-outline-success save-btn mt-2">Save</button>
               </div>
             </div>
           `;
+
+          // Save button click event
+          card.querySelector(".save-btn").addEventListener("click", () => saveProvider(p));
+
           list.appendChild(card);
         });
       } catch (err) {
         console.error("Error loading providers:", err);
+      }
+    }
+
+    // Save provider in localStorage
+    function saveProvider(provider) {
+      let saved = JSON.parse(localStorage.getItem("savedProviders")) || [];
+      
+      // check duplicate by id
+      if (!saved.some(sp => sp.id === provider.id)) {
+        saved.push(provider);
+        localStorage.setItem("savedProviders", JSON.stringify(saved));
+        alert("Provider saved successfully!");
+      } else {
+        alert("This provider is already saved.");
       }
     }
 
