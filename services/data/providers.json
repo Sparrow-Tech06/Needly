@@ -12,7 +12,7 @@
     "id": "P002",
     "name": "Suman Painter",
     "img": "images/suman.jpg",
-    "services": ["painting"],
+    "services": ["painting", "electrical"],
     "phone": "9123456780",
     "whatsapp": "9123456780",
     "googleMap": "https://maps.google.com/?q=23.111,87.222"
